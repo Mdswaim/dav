@@ -1,0 +1,32 @@
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv("student_performance.csv")
+
+print("DATASET")
+print(df)
+
+# Basic information
+print("\nDATASET INFORMATION")
+print(df.info())
+
+# Descriptive statistics
+print("\nDESCRIPTIVE STATISTICS")
+print(df.describe())
+
+# Check missing values
+print("\nMISSING VALUES")
+print(df.isnull().sum())
+
+# Check duplicate rows
+print("\nNUMBER OF DUPLICATES")
+print(df.duplicated().sum())
+
+# Display duplicate rows
+print("\nDUPLICATE ROWS")
+print(df[df.duplicated()])
+
+# Basic EDA observations
+print("\nAVERAGE MARKS:", df["Marks"].mean())
+print("HIGHEST MARKS:", df["Marks"].max())
+print("LOWEST MARKS:", df["Marks"].min())
